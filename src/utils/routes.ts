@@ -1,0 +1,14 @@
+enum MAPROUTES {
+  MAP = 'MAP',
+}
+
+enum PROFILEROUTES {
+  PROFILE = 'PROFILE',
+}
+
+enum NOTESROUTES {
+  NOTES = 'NOTES',
+  NOTEADD = 'Add New Note',
+}
+
+export { NOTESROUTES, MAPROUTES, PROFILEROUTES };
