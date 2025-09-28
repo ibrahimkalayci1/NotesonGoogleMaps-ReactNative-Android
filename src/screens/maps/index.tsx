@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import firestore from '@react-native-firebase/firestore';
+import { GOOGLE_MAPS_API_KEY } from '@env';
 
 import {
   AddCircle,
@@ -115,10 +116,9 @@ const Map: React.FC = ({ navigation, route }) => {
   };
 
   const getAddressFromCoors = async (lat: number, lng: number) => {
-    const apiKey = 'AIzaSyBc9R7w8ea1qIGltUg3gFX2W1FQbRIoue0';
     try {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}&language=tr`,
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${GOOGLE_MAPS_API_KEY}&language=tr`,
       );
 
       const data = await response.json();
